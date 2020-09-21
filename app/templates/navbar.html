@@ -1,19 +1,35 @@
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark ">
-    <a class="navbar-brand" href="{{url_for('main.index')}}"><strong>Pitchr</strong> </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
-            <ul class="navbar-nav mr-auto">
+  <nav class="navbar navbar-inverse navbar-fixed-left">
+    <div class="container">
+      <a class="navbar-brand" href="{{url_for('main.index')}}"><strong>Pitchr</strong> </a>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-controls="navbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            {% if current_user.is_authenticated %}
+              <li class="arrow"><a href="{{url_for('main.new_pitch')}}"><i class="fa fa-tachometer"></i><br>new pitch</a></li>
+            {%endif%}
+            <li class="arrow"><a href="{{url_for('main.index')}}"><i class="fa fa-tachometer"></i><br>browse</a></li>
+            
+           <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><i class="fa fa-table" aria-hidden="true"></i><br>Category<span class="caret"></span></a>
+            <ul class="dropdown-menu">
                 <li class="nav-item">
-                  <a class="nav-link" href="{{url_for('main.index')}}">All Pitches</a>
+                    <a class="nav-link" id ="cats" data-toggle="tab" href="#jobs">Job Pitches</a>
                 </li>
-                {% if current_user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('main.new_pitch')}}">New Pitch</a>
+                    <a class="nav-link" id ="cats" data-toggle="tab" href="#event">Event Pitches</a>
                 </li>
-                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" id ="cats"data-toggle="tab" href="#ads">Advert Pitches</a>
+                </li>
             </ul>
+          </li>
+        </ul> 
         <ul class="navbar-nav ml-auto">
             {% if current_user.is_authenticated %}
 
@@ -35,49 +51,6 @@
                 </li>
             {%endif%}
 
-        </ul>
-    </div>
-</nav>
-<nav class="navbar navbar-inverse navbar-fixed-left">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-controls="navbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-              <li class="arrow"><a href="#"><i class="fa fa-tachometer"></i><br>Dashboard</a></li>
-           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><i class="fa fa-table" aria-hidden="true"></i><br>Tables<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Table 1</a></li>
-              <li><a href="#">Table 2</a></li>
-              <li><a href="#">Table 3</a></li>
-              <li><a href="#">Table 4</a></li>
-              <li><a href="#">Table 5</a></li>
-              <li><a href="#">Table 6</a></li>
-             
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><i class="fa fa-file" aria-hidden="true"></i><br>Report<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Report A</a></li>
-              <li><a href="#">Report B</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><i class="fa fa-user" aria-hidden="true"></i><br>Attendance<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Team Attendance</a></li>
-              <li><a href="#">User Attendance</a></li>
-            </ul>
-          </li>
-          <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i><br>Location</a></li>
-          <li><a href="#"><i class="fa fa-line-chart"></i><br>Sales</a></li>
         </ul>
      
       </div>
