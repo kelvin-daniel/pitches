@@ -45,17 +45,16 @@
   <div class="col-md-1"></div>
     <div class="col-md-5" id="user">
         {% if current_user %}
-        <h3 class="text-center">You have {{user.pitches.count()}} Pitches</h3>
+        <h5 class="text-center">pitches {{user.pitches.count()}}</h5><hr>
         {% for i in posts%}
         <div class="pitches">
-            <h5>Title: {{i.title}}</h5>
-            <h6>{{i.post}}</h6>
-            <p>{{i.comment.count()}} Comments</p>
+            <h6 class="font-weight-bolder card-header">Title: {{i.title}}</h6>
+            <h6 class="p-2 shadow">{{i.post}}</h6>
+            <p class="shadow">{{i.comment.count()}} Comments</p>
         </div>
-         
         {%endfor%}
         {%else%}
-        <h3>You have ) posts</h3>
+        <h3>You have 0 posts</h3>
         {%endif%}
 
   </div>

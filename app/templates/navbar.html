@@ -11,7 +11,7 @@
       <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             {% if current_user.is_authenticated %}
-              <li class="arrow"><a href="{{url_for('main.new_pitch')}}"><i class="fa fa-plus-circle"></i><br>new pitch</a></li>
+              <li class="arrow"><a class="shadow" href="{{url_for('main.new_pitch')}}"><i class="fa fa-plus-circle"></i><br>new pitch</a></li>
             {%endif%}
             <li class="arrow"><a href="{{url_for('main.index')}}"><i class="fa fa-compass"></i><br>browse</a></li>
             
