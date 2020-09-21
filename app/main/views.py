@@ -1,4 +1,3 @@
-
 from flask import render_template, redirect, url_for,abort,request
 from . import main
 from flask_login import login_required,current_user
@@ -9,10 +8,10 @@ from .. import db,photos
 @main.route('/')
 def index():
     pitches = Pitch.query.all()
+    tech = Pitch.query.filter_by(category = 'Tech').all()
+    environment = Pitch.query.filter_by(category = 'Environment').all()
     job = Pitch.query.filter_by(category = 'Job').all() 
-    event = Pitch.query.filter_by(category = 'Events').all()
-    advertisement = Pitch.query.filter_by(category = 'Advertisement').all()
-    return render_template('index.html', job = job,event = event, pitches = pitches,advertisement= advertisement)
+    return render_template('index.html', pitches = pitches, tech = tech, job = job, environment = environment)
 
 @main.route('/create_new', methods = ['POST','GET'])
 @login_required

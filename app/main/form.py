@@ -6,12 +6,12 @@ class UpdateProfile(FlaskForm):
     bio = TextAreaField('Write a brief bio about you.',validators = [Required()])
     submit = SubmitField('Save')
 
-class PitchForm(FlaskForm):
-    title = StringField('Title', validators=[Required()])
-    category = SelectField('Category', choices=[('Events','Events'),('Job','Job'),('Advertisement','Advertisement')],validators=[Required()])
-    post = TextAreaField('Your Pitch', validators=[Required()])
-    submit = SubmitField('Pitch')
-
 class CommentForm(FlaskForm):
     comment = TextAreaField('Leave a comment',validators=[Required()])
     submit = SubmitField('Comment')
+
+class PitchForm(FlaskForm):
+    category = SelectField('Category :', choices=[('Tech','Tech'),('Job','Job'),('Environment','Environment')],validators=[Required()])
+    title = StringField('Title :', validators=[Required()])
+    post = TextAreaField('Your Pitch :', validators=[Required()])
+    submit = SubmitField('Pitch :')

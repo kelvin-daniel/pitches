@@ -1,10 +1,10 @@
 {% macro display(piches) %}
-<div class="container-fluid">
+<div class="container-fluid disp">
 		<div class="row">
 				{% if piches %}
 					{% for category in piches %}
 					<div class="col-md-4" >
-						<div class="thumbnail" id="carded">
+						<div class="card" id="carded">
 							<h5 class="card-header">{{category.title}}</h5>
 							<div class="card-body">
 									<p>{{category.post}}</p>
