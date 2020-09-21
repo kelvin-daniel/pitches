@@ -2,31 +2,30 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block content %}
-    <div class="container" id="allcomments" >
+    <div class="container float-left ml-5" id="ac" >
         <div class="row">
 
             {% if all_comments %}
                 <div class="col-md-7" >
-                    <h3 class="text-center" id="coms">All comments for the post</h3>
+                    <h6 class="text-center text-dark font-weight-bolder" id="coms">comments</h6>
                     {% for comment in all_comments %}
-                       <div class="card card-1 w-90 mb-3" >
+                       <div class="card card-1 w-100 mb-2" >
                            <div class="card-body">
-                            <p>{{comment.pitch.title}}</p><hr>
-                             <p class="card-title">{{ comment.comment }}</p>
-                             <p class="card-text">--- {{comment.user.username}}</p>
+                            <p class="comtit">{{comment.pitch.title}}</p>
+                             <p class="card-title">{{ comment.comment }}</p><hr>
+                             <p class="card-text">:::: {{comment.user.username}}</p>
                            </div>
                        </div>
                     {% endfor %}
                    </div>
                    <div class="col-md-5 card-1 commentform" >
-
                         {{wtf.quick_form(form)}}
                    </div>
                </div>
             {%else%}
             <div class="card w-90 mb-3">
                 <div class="card-body">
-                  <p class="card-title">No Comments for this yet for this post. Be the first to comment</p>
+                  <p class="card-title">No Comments for this post. Be the first to comment</p>
                 </div>
             </div> 
             <div class="col-md-5">

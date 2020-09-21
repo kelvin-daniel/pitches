@@ -11,6 +11,12 @@ html,body{
 .disp{
     font-size: 1rem;
 }
+.comtit{
+    color: #7ca88e;
+    font-weight: bold;
+    font-size: 1rem;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+}
 #cats{
     color: white;
     font-size: 18px;
@@ -69,7 +75,7 @@ hr {
 #coms{
     color: white;
 }
-#allcomments{
+#ac{
     /* background-color: rgba(0, 0, 0, 0.589); */
     padding-top: 2%;
     border-radius: 10px;
