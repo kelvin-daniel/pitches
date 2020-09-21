@@ -2,18 +2,18 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block content %}
-    <div class="container float-left ml-5" id="ac" >
+    <div class="container float-left ml-2" id="ac" >
         <div class="row">
 
             {% if all_comments %}
                 <div class="col-md-7" >
-                    <h6 class="text-center text-dark font-weight-bolder" id="coms">comments</h6>
+                    <h5 class="text-center text-dark font-weight-bolder" id="coms">comments</h5>
                     {% for comment in all_comments %}
                        <div class="card card-1 w-100 mb-2" >
                            <div class="card-body">
-                            <p class="comtit">{{comment.pitch.title}}</p>
-                             <p class="card-title">{{ comment.comment }}</p><hr>
-                             <p class="card-text">:::: {{comment.user.username}}</p>
+                            <p class="comtit card-header">{{comment.pitch.title}}</p>
+                             <p class="card-title pl-5">{{ comment.comment }}</p><hr>
+                             <p class="card-text float-right">:::: {{comment.user.username}}</p>
                            </div>
                        </div>
                     {% endfor %}

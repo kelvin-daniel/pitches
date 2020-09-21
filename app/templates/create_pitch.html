@@ -3,18 +3,16 @@
 
 
 {% block content %}
-
     <div  id="cp"  >  
-            <div class=" row" >
-                    
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8 card-1" id="pitch">
-                        <h4 class="text-center">Pitch</h4><hr>
-                        {{wtf.quick_form(form)}}
-                        {{simplemde.load}}
+            <div class=" row" >   
+                    <div class="float-left ml-5 col-md-6 card-1" id="pitch">
+                        <h4 class="text-center font-weight-bolder">Pitch</h4><hr>
+                        <div class="p-2">
+                            {{wtf.quick_form(form)}}
+                            {{simplemde.load}}
+                        </div>
                     </div>
-                    <div class="col-md-2"></div>
+                    <div class="col-md-3"></div>
             </div>
     </div>
-   
 {% endblock%}
