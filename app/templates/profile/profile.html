@@ -27,7 +27,7 @@
             {% if user == current_user %}
             <div class="profpic">
                 <div id="updates">
-                  <a href="{{url_for('main.updateprofile',name=user.username)}}">Edit Bio</a>
+                  <a class="invert" href="{{url_for('main.updateprofile',name=user.username)}}">Edit Bio</a>
                   <button class="btn btn-info" id="profbutton">Edit pic</button>
                 </div>
                 
