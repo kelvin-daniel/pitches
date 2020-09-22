@@ -9,9 +9,9 @@
     <div class="card testimonial-card">
         <div class="card-img"  >
                 {% if user.profile_pic_path %}
-                <img src="{{url_for('static',filename=user.profile_pic_path)}}" style="height:300px;border-radius: 1%" class="card-img"  alt="woman avatar">            
+                <img src="{{url_for('static',filename=user.profile_pic_path)}}" style="height:300px;border-radius: 1%" class="card-img"  alt="avatar">            
                 {%else%}
-                <p>No profile picture</p>
+                <p>Add profile picture</p>
             
                 {% endif %}  
         </div>
@@ -28,13 +28,13 @@
             <div class="profpic">
                 <div id="updates">
                   <a href="{{url_for('main.updateprofile',name=user.username)}}">Edit Bio</a>
-                  <button class="btn btn-sm btn-info" id="profbutton">update pic</button>
+                  <button class="btn btn-info" id="profbutton">Edit pic</button>
                 </div>
                 
                 <div id="imgform">
                     <form  action="{{url_for('main.update_pic',name=user.username)}}" method="post" enctype = "multipart/form-data">
                       <input type="file"  name="photo" class="form-control" required>
-                      <input type="submit" class="btn btn-sm btn-info" id="submit">
+                      <input type="submit" class="btn font-weight-bolder btn-info" id="submit" placeholder="post">
                     </form>
                 </div>
             </div>

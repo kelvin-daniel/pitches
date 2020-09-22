@@ -9,8 +9,8 @@ class Config:
     MAIL_PORT = 465
     MAIL_USE_TLS = False
     MAIL_USE_SSL = True
-    MAIL_USERNAME = ("MAIL_USERNAME")
-    MAIL_PASSWORD = ("MAIL_PASSWORD")
+    MAIL_USERNAME = 'kaymutor@gmail.com'
+    MAIL_PASSWORD = '37042490'
 
 class ProdConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://kevon:37042490@localhost/pitches'
