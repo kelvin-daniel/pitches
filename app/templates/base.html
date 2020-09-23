@@ -28,7 +28,7 @@
 
 
 <body class="body" >
-        <div class="row text-center mt-3 pl-5">
+        <div class="row text-center mt-3 pl-5 font-weight-bolder">
                 <p>press enter for dark and light mode</p>
         </div>
         {% block navbar %}
@@ -54,8 +54,9 @@
 
             if(e.keyCode === 13) {
                 document.documentElement.classList.toggle('dark-mode');
+
                 document.querySelectorAll('.inverted').forEach((result) => {
-                        result.classList.toggle('invert');
+                    result.classList.toggle('invert');
                 })
             }
         }

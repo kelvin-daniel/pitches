@@ -7,7 +7,7 @@
       
 
     <div class="card testimonial-card">
-        <div class="card-img"  >
+        <div class="card-img inverted"  >
                 {% if user.profile_pic_path %}
                 <img src="{{url_for('static',filename=user.profile_pic_path)}}" style="height:300px;border-radius: 1%" class="card-img"  alt="avatar">            
                 {%else%}
@@ -27,7 +27,7 @@
             {% if user == current_user %}
             <div class="profpic">
                 <div id="updates">
-                  <a class="invert" href="{{url_for('main.updateprofile',name=user.username)}}">Edit Bio</a>
+                  <a class="" href="{{url_for('main.updateprofile',name=user.username)}}">Edit Bio</a>
                   <button class="btn btn-info" id="profbutton">Edit pic</button>
                 </div>
                 
