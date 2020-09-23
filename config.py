@@ -13,7 +13,7 @@ class Config:
     MAIL_PASSWORD = '37042490'
 
 class ProdConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://kevon:37042490@localhost/pitches'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 
 class Config:
     # simple mde  configurations
