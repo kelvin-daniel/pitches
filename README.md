@@ -44,6 +44,10 @@ OR run:
 - css3
 - html5
 
+## Bugs :(
+Error in rendering the welcome page.
+Current fix: Hit back button, and login with the credentials you used to sign up.
+
 ## Author
 * kelvin kiplagat 
 
